@@ -10,7 +10,7 @@
 						</h2>
 					</div>
 					<div class="row">
-						<a href="">
+						<a href="<?= base_url(); ?>profile/ubah/<?= $this->session->userdata('id'); ?>">
 							<h2 class="mtext-110 cl5">
 								Ubah Profil
 							</h2>
@@ -31,7 +31,7 @@
 							</span>
 
 							<p class="stext-115 cl6 size-213 p-t-18">
-								"namaPembeli"
+								<?= $profile['namaPembeli']; ?>
 							</p>
 						</div>
 					</div>
@@ -43,11 +43,11 @@
 
 						<div class="size-212 p-t-2">
 							<span class="mtext-110 cl2">
-								"kota"
+								Alamat
 							</span>
 
 							<p class="stext-115 cl6 size-213 p-t-18">
-								"alamat"
+								<?= $profile['alamat']; ?>
 							</p>
 						</div>
 					</div>
@@ -63,7 +63,7 @@
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-								"noTelepon"
+								<?= $profile['noTelepon']; ?>
 							</p>
 						</div>
 					</div>
@@ -79,13 +79,16 @@
 							</span>
 
 							<p class="stext-115 cl1 size-213 p-t-18">
-								"email"
+								<?= $profile['email']; ?>
 							</p>
 						</div>
 					</div>
-					<button class="flex-c-m stext-101 cl0 size-121 bor1  btn-danger p-lr-15 trans-04 ">
-						Keluar
-					</button>
+					<a href="<?= base_url("auth/logout"); ?>">
+						<button class="flex-c-m stext-101 cl0 size-121 bor1  btn-danger p-lr-15 trans-04 ">
+							Keluar
+						</button>
+					</a>
+
 				</div>
 			</div>
 		</div>

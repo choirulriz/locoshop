@@ -21,7 +21,7 @@
                                         <th class="column-4">Harga</th>
                                         <th class="column-5">Jumlah item</th>
                                         <th class="column-6">Total</th>
-                                        <th class="column-7">"aksi"</th>
+                                        <th class="column-7">Hapus Item</th>
                                     </tr>
                                     <?php foreach ($beli as $b) : ?>
                                         <tr class="table_row">
@@ -33,10 +33,10 @@
                                             </td>
                                             <td class="column-2"><?= $b['nama']; ?></td>
                                             <td class="column-3"><?= $b['tanggalTransaksi']; ?></td>
-                                            <td class="column-4"><?= $b['harga']; ?></td>
+                                            <td class="column-4">Rp <?= $b['harga']; ?></td>
                                             <td class="column-5"><?= $b['jumlahBeli']; ?></td>
-                                            <td class="column-6"><?= $b['totalHarga']; ?></td>
-                                            <td class="column-7">
+                                            <td class="column-6">Rp <?= $b['totalHarga']; ?></td>
+                                            <td class="column-7 p-l-30">
                                                 <a href="<?= base_url(''); ?>/beli/hapusBeli/<?= $b['idBeli']; ?>"><i class="zmdi zmdi-delete zmdi-hc-2x" style="width:10px""></i></a>
                                             
                                                                         </td>

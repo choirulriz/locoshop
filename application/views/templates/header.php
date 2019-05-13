@@ -65,13 +65,13 @@
                         <div class="menu-desktop">
                             <ul class="main-menu">
                                 <li class="active-menu">
-                                    <a href="<?= base_url("auth"); ?>" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
+                                    <a href="#" class="dis-block icon-header-item cl2 hov-cl1 trans-04 p-l-22 p-r-11">
                                         <i class="zmdi zmdi-account-o zmdi-hc-2x" style="width:10px"></i>
                                     </a>
                                     <ul class="sub-menu">
                                         <li><a href="<?= base_url("auth"); ?>">Masuk</a></li>
                                         <li><a href="<?= base_url("auth/registration"); ?>">Daftar</a></li>
-                                        <li><a href="<?= base_url("profile"); ?>">Profil</a></li>
+                                        <li><a href="<?= base_url(); ?>profile/profil/<?= $this->session->userdata('id'); ?>">Profil</a></li>
                                     </ul>
                                 </li>
 

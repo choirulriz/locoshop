@@ -51,7 +51,6 @@ class Home extends CI_Controller{
 
 	public function akun(){
 		$data['judul'] = 'Akun | Locoshop';
-		$this->session->
 		$data['barang'] = $this->Barang_model->getBarangByJenis('Pakaian');
 		$this->load->view('templates/header', $data);
 		$this->load->view('home/pakaian', $data);
