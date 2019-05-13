@@ -7,11 +7,15 @@ class Beli extends CI_Controller
     {
         parent::__construct();
         $this->load->library('unit_test');
+        $this->load->library('form_validation');
     }
 
     public function index()
     {
-        echo ' cek';
+        $data['judul'] = 'Transaksi | Locoshop';
+        $this->load->view('templates/header', $data);
+        $this->load->view('home/beli');
+        $this->load->view('templates/footer');
     }
 
     public function ketersediaan($stock, $pembelian)

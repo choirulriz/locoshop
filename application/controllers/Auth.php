@@ -15,7 +15,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password', 'Password', 'required|trim');
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Masuk | Locoshop';
-            $this->load->view('templates/header', $data);
+            $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/login');
             $this->load->view('templates/auth_footer');
         } else {
@@ -77,7 +77,7 @@ class Auth extends CI_Controller
         $this->form_validation->set_rules('password2', 'Password', 'required|trim|matches[password1]');
         if ($this->form_validation->run() == false) {
             $data['judul'] = 'Daftar | Locoshop';
-            $this->load->view('templates/header', $data);
+            $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/registration');
             $this->load->view('templates/auth_footer');
         } else {

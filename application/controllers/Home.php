@@ -8,7 +8,6 @@ class Home extends CI_Controller{
 		$this->load->model('Barang_model');
 	}
 
-
     public function index(){
 		$data['judul']='LocoShop';
 		$data['barang']=$this->Barang_model->getAllBarang();
@@ -18,8 +17,8 @@ class Home extends CI_Controller{
 	}
     
 	public function detail($id){
-        $data['judul']='Detail Produk';
-        $data['barang']=$this->Barang_model->getBarangById($id);
+        $data['judul']='Locoshop';
+        $data['detail']=$this->Barang_model->getBarangById($id);
 		$this->load->view('templates/header',$data);
 		$this->load->view('home/detail',$data);
 		$this->load->view('templates/footer');
@@ -50,6 +49,14 @@ class Home extends CI_Controller{
 		$this->load->view('templates/footer');
 	}
 
+	public function akun(){
+		$data['judul'] = 'Akun | Locoshop';
+		$this->session->
+		$data['barang'] = $this->Barang_model->getBarangByJenis('Pakaian');
+		$this->load->view('templates/header', $data);
+		$this->load->view('home/pakaian', $data);
+		$this->load->view('templates/footer');
+	}
 
 
 
