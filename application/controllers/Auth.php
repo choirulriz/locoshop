@@ -17,7 +17,7 @@ class Auth extends CI_Controller
             $data['judul'] = 'Masuk | Locoshop';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/login');
-            $this->load->view('templates/auth_footer');
+            $this->load->view('templates/footer');
         } else {
             $this->_login();
         }
@@ -79,7 +79,7 @@ class Auth extends CI_Controller
             $data['judul'] = 'Daftar | Locoshop';
             $this->load->view('templates/auth_header', $data);
             $this->load->view('auth/registration');
-            $this->load->view('templates/auth_footer');
+            $this->load->view('templates/footer');
         } else {
             $data = [
                 'namaPembeli' => htmlspecialchars($this->input->post('name', true)),
