@@ -1,4 +1,5 @@
 <div class="container">
+	 <?= $this->session->flashdata('message'); ?>
 	<div class="p-b-10">
 		<h3 class="ltext-101 cl5">
 			Daftar Produk

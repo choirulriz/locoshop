@@ -16,10 +16,13 @@
             </div>
 
             <div class="bor10 col-md-6 col-lg-5 p-3">
-                <form action="" method="">
+                <form action="<?= base_url('beli'); ?>" method="post">
                     <div class="p-r-20 p-l-20 p-t-5 p-lr-0-lg">
                         <h4 class="ltext-109 cl2 js-name-detail p-b-14">
+                            <input type="hidden" name="idPembeli" value="<?=$this->session->userdata('id');?>">  
                             <input type="hidden" name="idBarang" value="<?=$detail['idBarang'];?>">  
+                            <input type="hidden" name="harga" value="<?=$detail['harga'];?>">  
+                            
                             <?= $detail['nama']; ?>
                         </h4>
                         <br>
@@ -58,17 +61,17 @@
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Stok Tersedia: <?= $detail['stock']; ?> </span>
                                 </div>
-                                <select class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
+                                <select name="jumlahBeli" class="custom-select" id="inputGroupSelect03" aria-label="Example select with button addon">
                                     <option selected>Pilih Jumlah barang</option>
                                     <?php for ($i = 1; $i <= $detail['stock']; $i++) : ?>
-                                        <option name="stok" value="<?= $i; ?>"><?= $i; ?></option>
+                                        <option value="<?= $i; ?>"><?= $i; ?></option>
                                     <?php endfor; ?>
                                 </select>
                             </div>
 
                             <br><br>
 
-                            <button class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
+                            <button type="submit" class="flex-c-m stext-101 cl0 size-116 bg3 bor14 hov-btn3 p-lr-15 trans-04 pointer">
                                 Beli Sekarang
                             </button>
                         </div>

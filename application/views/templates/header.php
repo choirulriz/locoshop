@@ -18,7 +18,7 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/animsition/css/animsition.min.css">
     <!--===============================================================================================-->
-
+    <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/vendor/select2/select2.min.css">
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/util.css">
     <link rel="stylesheet" type="text/css" href="<?= base_url(); ?>/css/main.css">

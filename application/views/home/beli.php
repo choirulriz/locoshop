@@ -5,6 +5,7 @@
         <!-- Shoping Cart -->
         <form class="bg0 p-t-75 p-b-85">
             <div class="container">
+                <?= $this->session->flashdata('message'); ?>
                 <div class="row">
                     <h3 class="ltext-101 cl5">
                         Pembelian
@@ -22,34 +23,36 @@
                                         <th class="column-6">Total</th>
                                         <th class="column-7">"aksi"</th>
                                     </tr>
+                                    <?php foreach ($beli as $b) : ?>
+                                        <tr class="table_row">
 
-                                    <tr class="table_row">
-                                        <td class="column-1">
-                                            <div class="how-itemcart1">
-                                                <img src="images/.jpg" alt="IMG">
-                                            </div>
-                                        </td>
-                                        <td class="column-2">"namabarang"</td>
-                                        <td class="column-3">"tanggal transaksi"</td>
-                                        <td class="column-4">"harga"</td>
-                                        <td class="column-5">"jumlahItem"</td>
-                                        <td class="column-6">"TotalHarga"</td>
-                                        <td class="column-7">
-                                            <a href="#"><i class="zmdi zmdi-delete zmdi-hc-2x" style="width:10px""></i></a>
+                                            <td class="column-1">
+                                                <div class="how-itemcart1">
+                                                    <img src="<?= base_url(); ?>/img/<?= $b['foto']; ?>" alt="IMG">
+                                                </div>
+                                            </td>
+                                            <td class="column-2"><?= $b['nama']; ?></td>
+                                            <td class="column-3"><?= $b['tanggalTransaksi']; ?></td>
+                                            <td class="column-4"><?= $b['harga']; ?></td>
+                                            <td class="column-5"><?= $b['jumlahBeli']; ?></td>
+                                            <td class="column-6"><?= $b['totalHarga']; ?></td>
+                                            <td class="column-7">
+                                                <a href="<?= base_url(''); ?>/beli/hapusBeli/<?= $b['idBeli']; ?>"><i class="zmdi zmdi-delete zmdi-hc-2x" style="width:10px""></i></a>
                                             
-                                        </td>
-                                    </tr>
+                                                                        </td>
+                                                                    </tr>
+                                            <?php endforeach; ?>
 
-                                </table>
+                                        </table>
+                                    </div>
+
+
+                                </div>
                             </div>
 
 
                         </div>
                     </div>
-
-
-                </div>
             </div>
-    </div>
-    </form>
-    </div>
+            </form>
+            </div>

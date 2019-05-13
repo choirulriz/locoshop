@@ -3,11 +3,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Auth extends CI_Controller
 {
-    public function __construct()
-    {
-        parent::__construct();
-        $this->load->library('form_validation');
-    }
 
     public function index()
     {
@@ -37,6 +32,7 @@ class Auth extends CI_Controller
             //cek passwordnya
             if (password_verify($password, $user['password'])) {
                 $data = [
+                    'nama' => $user['namaPembeli'],
                     'email' => $user['email'],
                     'id' => $user['id']
                 ];
@@ -52,7 +48,6 @@ class Auth extends CI_Controller
             redirect('auth');
         }
     }
-
 
     public function registration()
     {

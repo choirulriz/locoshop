@@ -20,7 +20,7 @@
                                     <?= $this->session->flashdata('message'); ?>
                                     <form class="user" method="post" action="<?= base_url('auth'); ?>">
                                         <div class="form-group">
-                                            <input type="text" class="form-control rounded-pill form-control-user" id="email" name="email" placeholder="Masukkan alamat email..." value=<?= set_value('email'); ?>>
+                                            <input type="text" class="form-control rounded-pill form-control-user" id="email" name="email" placeholder="Masukkan alamat email..." autocomplete="off">
                                             <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
 
                                         </div>
@@ -29,7 +29,7 @@
                                             <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
                                         </div>
 
-                                        <button type="submit" class="btn btn-primary rounded-pill" style="width:90px">
+                                        <button type="submit" class="btn btn-primary rounded-pill btn-user btn-block" >
                                             Masuk
                                         </button>
 
