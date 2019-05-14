@@ -20,7 +20,7 @@
             </div>
 
             <div class="size-210 bor10 m-lr-auto flex-w flex-col-m p-lr-93 p-tb-30 p-lr-15-lg w-full-md">
-                <form>
+                <form method="POST" action="<?= base_url(); ?>profile/update">
                     <div class="flex-w w-full p-b-42">
 
                         <span class="fs-18 cl5 txt-center size-211">
@@ -33,7 +33,7 @@
                             </span>
 
                             <div class="mt-3">
-                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="<?= $profile['namaPembeli']; ?>">
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="namaPembeli" value="<?= $profile['namaPembeli']; ?>">
                             </div>
                         </div>
                     </div>
@@ -49,7 +49,7 @@
                             </span>
 
                             <div class="mt-3">
-                                <input type="text" class="form-control" placeholder="Isikan Alamat Anda" aria-label="Username" aria-describedby="basic-addon1" value="<?= $profile['alamat']; ?>">
+                                <input type="text" class="form-control" placeholder="Isikan Alamat Anda" aria-label="Username" name="alamat" aria-describedby="basic-addon1" value="<?= $profile['alamat']; ?>">
                             </div>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
                             </span>
 
                             <div class="mt-3">
-                                <input type="text" class="form-control" placeholder="Isikan noTelepon Anda" aria-label="Username" aria-describedby="basic-addon1" value="<?= $profile['noTelepon']; ?>">
+                                <input type="number" class="form-control" placeholder="Isikan noTelepon Anda" aria-label="Username" name="noTelepon" aria-describedby="basic-addon1" value="<?= $profile['noTelepon']; ?>">
                             </div>
                         </div>
                     </div>
@@ -81,16 +81,18 @@
                             </span>
 
                             <div class="mt-3">
-                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" value="<?= $profile['email']; ?>" readonly>
+                                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="email" value="<?= $profile['email']; ?>" readonly>
                             </div>
 
                         </div>
                     </div>
-                    <a href="<?= base_url("auth/logout"); ?>">
-                        <button type="submit" class="flex-c-m stext-101 cl0 size-121 bor1  btn-danger p-lr-15 trans-04 ">
-                            Keluar
+                        <input type="hidden" name="password" value="<?= $profile['password']; ?>">
+                        <input type="hidden" name="idPembeli" value="<?= $profile['id']; ?>">
+                    
+                        <button type="submit" class="flex-c-m stext-101 cl0 size-121 bor1  btn-primary p-lr-15 trans-04 ">
+                            Ubah Profil
                         </button>
-                    </a>
+                    
 
                 </form>
             </div>

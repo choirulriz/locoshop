@@ -59,7 +59,7 @@
                         <div>
                         </div>
 
-                        <a href="<?= base_url("beli"); ?>" class="icon-header-item cl2 hov-cl1 icon-header-noti trans-04 p-l-22 p-r-11" data-notify="3">
+                        <a href="<?= base_url("beli"); ?>" class="icon-header-item cl2 hov-cl1 icon-header-noti trans-04 p-l-22 p-r-11" data-notify="<?=$this->db->get('beli')->num_rows();?>">
                             <i class="zmdi zmdi-shopping-cart"></i>
                         </a>
                         <div class="menu-desktop">
@@ -69,6 +69,7 @@
                                         <i class="zmdi zmdi-account-o zmdi-hc-2x" style="width:10px"></i>
                                     </a>
                                     <ul class="sub-menu">
+                                        
                                         <li><a href="<?= base_url("auth"); ?>">Masuk</a></li>
                                         <li><a href="<?= base_url("auth/registration"); ?>">Daftar</a></li>
                                         <li><a href="<?= base_url(); ?>profile/profil/<?= $this->session->userdata('id'); ?>">Profil</a></li>

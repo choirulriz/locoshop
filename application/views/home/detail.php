@@ -21,7 +21,12 @@
                         <h4 class="ltext-109 cl2 js-name-detail p-b-14">
                             <input type="hidden" name="idPembeli" value="<?=$this->session->userdata('id');?>">  
                             <input type="hidden" name="idBarang" value="<?=$detail['idBarang'];?>">  
+                            <input type="hidden" name="namaBarang" value="<?=$detail['nama'];?>">  
+                            <input type="hidden" name="foto" value="<?=$detail['foto'];?>">  
+                            <input type="hidden" name="jenis" value="<?=$detail['jenis'];?>">  
                             <input type="hidden" name="harga" value="<?=$detail['harga'];?>">  
+                            <input type="hidden" name="stock" value="<?=$detail['stock'];?>">  
+                            <input type="hidden" name="deskripsi" value="<?=$detail['deskripsi'];?>">  
                             
                             <?= $detail['nama']; ?>
                         </h4>

@@ -21,10 +21,16 @@ class Beli extends CI_Controller
             $this->load->view('templates/footer');
         } else {
             $jumlahBeli = htmlspecialchars($this->input->post('jumlahBeli', true));
+            $idBarang = htmlspecialchars($this->input->post('idBarang', true));
+            $nama = htmlspecialchars($this->input->post('nama', true));
+            $foto = htmlspecialchars($this->input->post('foto', true));
+            $jenis = htmlspecialchars($this->input->post('jenis', true));
             $harga = htmlspecialchars($this->input->post('harga', true));
+            $stock = htmlspecialchars($this->input->post('stock', true));
+            $deskripsi = htmlspecialchars($this->input->post('deskripsi', true));
             $data = [
                 'id' => htmlspecialchars($this->input->post('idPembeli', true)),
-                'idBarang' => htmlspecialchars($this->input->post('idBarang', true)),
+                'idBarang' => $idBarang,
                 'jumlahBeli' => $jumlahBeli,
                 'jasaPengiriman' => htmlspecialchars($this->input->post('jasaPengiriman', true)),
                 'kota' => htmlspecialchars($this->input->post('kota', true)),
@@ -32,6 +38,18 @@ class Beli extends CI_Controller
                 'tanggalTransaksi' => date('d-m-Y'),
                 'totalHarga' => $jumlahBeli*$harga
             ];
+            $dataBarang = [
+                'idBarang' => $idBarang,
+                'nama' => $nama,
+                'foto' =>$foto,
+                'jenis' => $jenis,
+                'harga' => $harga,
+                'stock' => $stock-$jumlahBeli,
+                'deskripsi' => $deskripsi
+            ];
+
+            $this->db->where('idBarang', $idBarang);
+            $this->db->update('barang', $dataBarang);
             $this->db->insert('beli', $data);
             $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Pembelian Berhasil!</div>');
             redirect('beli');
