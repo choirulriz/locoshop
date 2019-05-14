@@ -35,7 +35,7 @@
 					<div class="block2-pic hov-img0">
 						<img src="<?= base_url(); ?>/img/<?= $b['foto']; ?>" alt="IMG-PRODUCT">
 						<a href="<?= base_url(); ?>home/detail/<?= $b['idBarang']; ?>" class="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04">
-							Quick View
+							BELI
 						</a>
 					</div>
 

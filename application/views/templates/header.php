@@ -45,11 +45,11 @@
                     <!-- Menu desktop -->
 
                     <div style="margin-left:100px">
-                        <form class="form-control rounded-pill flex-w">
-                            <button class="flex-c-m trans-04 mr-3">
+                        <form class="form-control rounded-pill flex-w" action="" method="POST">
+                            <input class="plh3 " style=" width:500px" type="text" name="search" placeholder="Search...">
+                            <button type="submit" class="flex-c-m trans-04 mr-3">
                                 <i class="zmdi zmdi-search"></i>
                             </button>
-                            <input class="plh3 " style=" width:500px" type="text" name="search" placeholder="Search...">
                         </form>
                     </div>
 

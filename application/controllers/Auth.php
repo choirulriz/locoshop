@@ -57,7 +57,8 @@ class Auth extends CI_Controller
             'Email',
             'required|trim|valid_email|is_unique[pembeli.email]',
             [
-                'is_unique' => 'Email ini telah terdaftar'
+                'is_unique' => 'Email ini telah terdaftar',
+                'valid_email' => 'Email tidak valid'
             ]
         );
         $this->form_validation->set_rules(
