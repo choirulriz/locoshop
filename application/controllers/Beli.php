@@ -22,7 +22,7 @@ class Beli extends CI_Controller
         } else {
             $jumlahBeli = htmlspecialchars($this->input->post('jumlahBeli', true));
             $idBarang = htmlspecialchars($this->input->post('idBarang', true));
-            $nama = htmlspecialchars($this->input->post('nama', true));
+            $nama = htmlspecialchars($this->input->post('namaBarang', true));
             $foto = htmlspecialchars($this->input->post('foto', true));
             $jenis = htmlspecialchars($this->input->post('jenis', true));
             $harga = htmlspecialchars($this->input->post('harga', true));

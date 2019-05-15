@@ -38,6 +38,16 @@ class Barang_model extends CI_model{
         $this->db->where('idBarang',$idBarang);
 		$this->db->delete('barang');
 	}
+
+	public function cari($keyword)
+	{
+		$this->db->select('*');
+		$this->db->from('barang');
+		$this->db->like('nama', $keyword);
+		$this->db->or_like('jenis', $keyword);
+		$this->db->or_like('deskripsi', $keyword);
+		return $this->db->get()->result();
+	}
 }
 
 ?>

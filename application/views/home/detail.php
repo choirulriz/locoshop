@@ -55,11 +55,11 @@
                             </div>
 
                             <div class="bor8 bg0 m-b-12">
-                                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="kota" placeholder="Nama Kota/ Kabupaten">
+                                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" name="kota" placeholder="Nama Kota/ Kabupaten">
                             </div>
 
                             <div class="bor8 bg0 m-b-12">
-                                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" name="alamat" placeholder="Alamat">
+                                <input class="stext-111 cl8 plh3 size-111 p-lr-15" type="text" pattern="[^@]+@[^@]+\.[a-zA-Z]{2,6}" name="alamat" placeholder="Alamat">
                             </div>
 
                             <div class="input-group m-b-22">

@@ -15,16 +15,25 @@ class Home extends CI_Controller{
 		$this->load->view('home/index',$data);
 		$this->load->view('templates/footer');
 	}
-public function detail($id){
-	if(null !== $this->session->userdata('id')){
-        $data['judul']='Locoshop';
-        $data['detail']=$this->Barang_model->getBarangById($id);
-		$this->load->view('templates/header',$data);
-		$this->load->view('home/detail',$data);
-		$this->load->view('templates/footer');
-	}else{
-		redirect('home');
+	public function detail($id){
+		if(null !== $this->session->userdata('id')){
+			$data['judul']='Locoshop';
+			$data['detail']=$this->Barang_model->getBarangById($id);
+			$this->load->view('templates/header',$data);
+			$this->load->view('home/detail',$data);
+			$this->load->view('templates/footer');
+		}else{
+			redirect('home');
+		}
 	}
+
+	public function cari(){
+		$keyword = $this->input->post('keyword');
+		$data['barang']=$this->Barang_model->cari($keyword);
+		$data['judul'] = 'LocoShop';
+		$this->load->view('templates/header', $data);
+		$this->load->view('home/index', $data);
+		$this->load->view('templates/footer');
 	}
 
 
